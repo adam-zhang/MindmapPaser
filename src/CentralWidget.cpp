@@ -7,6 +7,7 @@
 
 #include "CentralWidget.h"
 #include "Previewer.h"
+#include "MindmapEditor.h"
 #include <QSplitter.h>
 #include <QHBoxLayout>
 #include <QTextEdit>
@@ -39,7 +40,7 @@ QWidget* CentralWidget::makeSplitter()
 
 QWidget* CentralWidget::makeEditor()
 {
-	auto edit = new QTextEdit;
+	auto edit = new MindmapEditor;
 	return edit;
 }
 

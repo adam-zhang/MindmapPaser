@@ -5,6 +5,7 @@
 
 
 MainWindow::MainWindow(QWidget* parent)
+	: QMainWindow(parent)
 {
 	initialize();
 };
@@ -30,8 +31,22 @@ void MainWindow::addMenus()
 void MainWindow::makeFileMenu()
 {
 	auto file = menuBar()->addMenu("&File");
-	auto action = file->addAction("E&xit");
+	auto action = file->addAction("&New File");
+	connect(action, &QAction::triggered, this, &MainWindow::onNewFile);
+	action = file->addAction("&Open File");
+	connect(action, &QAction::triggered, this, &MainWindow::onOpenFile);
+	action = file->addAction("E&xit");
 	connect(action, &QAction::triggered, this, &MainWindow::close);
+}
+
+void MainWindow::onOpenFile()
+{
+
+}
+
+void MainWindow::onNewFile()
+{
+
 }
 
 void MainWindow::onExit()
@@ -41,7 +56,7 @@ void MainWindow::onExit()
 
 void MainWindow::makeEditMenu()
 {
-	auto menu = menuBar()->addMenu("&Edit");
+	menuBar()->addMenu("&Edit");
 }
 
 void MainWindow::makeHelpMenu()

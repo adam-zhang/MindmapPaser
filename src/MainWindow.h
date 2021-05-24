@@ -18,6 +18,8 @@ private:
 private slots:
 	void onExit();
 	void onAbout();
+	void onOpenFile();
+	void onNewFile();
 };
 
 #endif//__MAINWINDOW__H
