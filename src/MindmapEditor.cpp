@@ -6,6 +6,7 @@
 ********************************************************************************/
 
 #include "MindmapEditor.h"
+#include "Model.h"
 
 MindmapEditor::MindmapEditor(QWidget* parent)
 	: QTextEdit(parent)
@@ -18,5 +19,5 @@ MindmapEditor::~MindmapEditor()
 
 void MindmapEditor::update()
 {
-
+	setText(Model::instance().text());
 }

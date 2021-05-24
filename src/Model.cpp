@@ -23,3 +23,9 @@ void Model::update(Viewer* viewer)
 			view->update();
 }
 
+void Model::setText(const QString& text)
+{
+	text_ = text;
+	update(nullptr);
+}
+

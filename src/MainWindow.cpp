@@ -48,7 +48,6 @@ void MainWindow::onOpenFile()
 	auto fileName = QFileDialog::getOpenFileName(this, GlobalSettings::instance().applicationName(), ".");
 	auto text = FileOperator::open(fileName);
 	Model::instance().setText(text);
-	//centralWidget_->setText(v);
 }
 
 void MainWindow::onNewFile()

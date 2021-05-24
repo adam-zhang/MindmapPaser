@@ -25,7 +25,8 @@ public:
 	void addViewer(Viewer* viewer)
 	{ viewers_.emplace_back(viewer); }
 	void update(Viewer* viewer);
-	void setText(const QString& text)
-	{ text_ = text; }
+	void setText(const QString& text);
+	const QString& text()const
+	{ return text_; }
 };
 #endif//__MODEL__H
