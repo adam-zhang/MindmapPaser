@@ -8,14 +8,17 @@
 #define __PREVIEWER__H
 
 #include <QWidget>
+#include "Viewer.h"
 
 
-class Previewer : public QWidget
+class Previewer : public QWidget, public Viewer
 {
 	Q_OBJECT 
 public:
 	Previewer(QWidget* = nullptr);
 	~Previewer();
 	
+public:
+	void update()override;
 };
 #endif//__PREVIEWER__H

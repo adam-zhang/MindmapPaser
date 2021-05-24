@@ -1,7 +1,11 @@
 #include "MainWindow.h"
 #include "AboutDialog.h"
 #include "CentralWidget.h"
+#include "GlobalSettings.h"
+#include "FileOperator.h"
+#include "Model.h"
 #include <QMenuBar>
+#include <QFileDialog>
 
 
 MainWindow::MainWindow(QWidget* parent)
@@ -41,12 +45,15 @@ void MainWindow::makeFileMenu()
 
 void MainWindow::onOpenFile()
 {
-
+	auto fileName = QFileDialog::getOpenFileName(this, GlobalSettings::instance().applicationName(), ".");
+	auto text = FileOperator::open(fileName);
+	Model::instance().setText(text);
+	//centralWidget_->setText(v);
 }
 
 void MainWindow::onNewFile()
 {
-
+	
 }
 
 void MainWindow::onExit()
@@ -74,5 +81,6 @@ void MainWindow::onAbout()
 
 void MainWindow::addCentralWidget()
 {
-	setCentralWidget(new CentralWidget);
+	centralWidget_ = new CentralWidget;
+	setCentralWidget(centralWidget_);
 }

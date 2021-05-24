@@ -8,6 +8,7 @@
 #include "CentralWidget.h"
 #include "Previewer.h"
 #include "MindmapEditor.h"
+#include "Model.h"
 #include <QSplitter.h>
 #include <QHBoxLayout>
 #include <QTextEdit>
@@ -41,11 +42,14 @@ QWidget* CentralWidget::makeSplitter()
 QWidget* CentralWidget::makeEditor()
 {
 	auto edit = new MindmapEditor;
+	Model::instance().addViewer(edit);
 	return edit;
 }
 
 QWidget* CentralWidget::makePreviewer()
 {
 	auto previewer = new Previewer;
+	Model::instance().addViewer(previewer);
 	return previewer;
 }
+

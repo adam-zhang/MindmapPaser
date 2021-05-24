@@ -7,16 +7,15 @@
 #ifndef __FILEOPERATOR__H
 #define __FILEOPERATOR__H
 
-#include <string>
-#include <vector>
+#include <QString>
 
 class FileOperator
 {
-public:
+private:
 	FileOperator();
 	~FileOperator();
 public:
-	std::vector<std::string> open(const std::string& fileName);
-	bool save(const std::string& fileName, const std::string& content);
+	static QString open(const QString& fileName);
+	static bool save(const QString& fileName, const QString& content);
 };
 #endif//__FILEOPERATOR__H

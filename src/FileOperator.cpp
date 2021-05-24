@@ -6,8 +6,8 @@
 ********************************************************************************/
 
 #include "FileOperator.h"
-#include <fstream>
-#include <sstream>
+#include <QFile>
+#include <QTextStream>
 
 FileOperator::FileOperator()
 {
@@ -17,23 +17,22 @@ FileOperator::~FileOperator()
 {
 }
 
-std::vector<std::string> FileOperator::open(const std::string& fileName)
+QString FileOperator::open(const QString& fileName)
 {
-	std::vector<std::string> v;
-	std::ifstream file(fileName);
-	if (file.bad())
-		return v;
-	std::string line;
-	while(getline(file, line))
-		v.emplace_back(line);
-	return v;
+	QString s;
+	QFile file(fileName);
+	if (!file.open( QIODevice::ReadOnly|QIODevice::Text))
+		return s;
+	QTextStream stream(&file);
+	return stream.readAll();
 }
 
-bool FileOperator::save(const std::string& fileName, const std::string& content)
+bool FileOperator::save(const QString& fileName, const QString& content)
 {
-	std::ofstream file(fileName);
-	if (!file.bad())
+	QFile file(fileName);
+	if (!file.open(QIODevice::WriteOnly))
 		return false;
-	file << content;
+	QTextStream stream(&file);
+	stream << content;
 	return true;
 }

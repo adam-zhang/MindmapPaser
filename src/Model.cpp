@@ -1,24 +1,25 @@
 /********************************************************************************
-> FileName:	Previewer.cpp
+> FileName:	Model.cpp
 > Author:	Mingping Zhang
 > Email:	mingpingzhang@163.com
-> Create Time:	Mon May 24 10:13:22 2021
+> Create Time:	Mon May 24 13:02:33 2021
 ********************************************************************************/
 
-#include "Previewer.h"
+#include "Model.h"
+#include "Viewer.h"
 
-Previewer::Previewer(QWidget* parent)
-	: QWidget(parent)
+Model::Model()
 {
-
 }
 
-Previewer::~Previewer()
+Model::~Model()
 {
-
 }
 
-void Previewer::update()
+void Model::update(Viewer* viewer)
 {
-
+	for(auto view : viewers_)
+		if (view != viewer)
+			view->update();
 }
+

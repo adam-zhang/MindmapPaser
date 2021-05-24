@@ -2,6 +2,8 @@
 #define MAINWINDOW_H
 #include <QMainWindow>
 
+class CentralWidget;
+
 class MainWindow : public QMainWindow
 {
 	Q_OBJECT
@@ -20,6 +22,8 @@ private slots:
 	void onAbout();
 	void onOpenFile();
 	void onNewFile();
+private:
+	CentralWidget* centralWidget_ = nullptr;
 };
 
 #endif//__MAINWINDOW__H

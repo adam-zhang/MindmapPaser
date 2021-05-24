@@ -15,3 +15,8 @@ MindmapEditor::MindmapEditor(QWidget* parent)
 MindmapEditor::~MindmapEditor()
 {
 }
+
+void MindmapEditor::update()
+{
+
+}

@@ -15,6 +15,9 @@ set(sources
 	MindmapLine.cpp
 	MindmapParser.cpp
 	FileOperator.cpp
+	GlobalSettings.cpp
+	Model.cpp
+	Viewer.cpp
 	)
 add_executable(${PROJECT_NAME} ${sources})
 target_link_libraries(${PROJECT_NAME} Qt5::Widgets)

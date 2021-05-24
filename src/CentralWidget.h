@@ -9,6 +9,9 @@
 
 #include <QWidget>
 
+class MindmapEditor;
+class MindmapPreviewer;
+
 class CentralWidget : public QWidget
 {
 	Q_OBJECT
@@ -20,5 +23,8 @@ private:
 	QWidget* makeSplitter();
 	QWidget* makeEditor();
 	QWidget* makePreviewer();
+private:
+	MindmapPreviewer* previewer_ = nullptr;
+	MindmapEditor* editor_ = nullptr;
 };
 #endif//__CENTRALWIDGET__H

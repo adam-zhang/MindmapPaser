@@ -8,6 +8,7 @@
 #define __MINDMAPPARSER__H
 
 
+
 class MindmapParser
 {
 public:

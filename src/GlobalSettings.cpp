@@ -1,24 +1,21 @@
 /********************************************************************************
-> FileName:	Previewer.cpp
+> FileName:	GlobalSettings.cpp
 > Author:	Mingping Zhang
 > Email:	mingpingzhang@163.com
-> Create Time:	Mon May 24 10:13:22 2021
+> Create Time:	Mon May 24 11:11:35 2021
 ********************************************************************************/
 
-#include "Previewer.h"
+#include "GlobalSettings.h"
 
-Previewer::Previewer(QWidget* parent)
-	: QWidget(parent)
+GlobalSettings::GlobalSettings()
 {
-
 }
 
-Previewer::~Previewer()
+GlobalSettings::~GlobalSettings()
 {
-
 }
 
-void Previewer::update()
+QString GlobalSettings::applicationName()
 {
-
+	return "Mindmap Previewer";
 }

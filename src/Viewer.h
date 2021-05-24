@@ -1,24 +1,19 @@
 /********************************************************************************
-> FileName:	Previewer.cpp
+> FileName:	Viewer.h
 > Author:	Mingping Zhang
 > Email:	mingpingzhang@163.com
-> Create Time:	Mon May 24 10:13:22 2021
+> Create Time:	Mon May 24 11:48:06 2021
 ********************************************************************************/
+#ifndef __VIEWER__H
+#define __VIEWER__H
 
-#include "Previewer.h"
 
-Previewer::Previewer(QWidget* parent)
-	: QWidget(parent)
+class Viewer
 {
-
-}
-
-Previewer::~Previewer()
-{
-
-}
-
-void Previewer::update()
-{
-
-}
+public:
+	Viewer();
+	~Viewer();
+public:
+	virtual void update() = 0;
+};
+#endif//__VIEWER__H
