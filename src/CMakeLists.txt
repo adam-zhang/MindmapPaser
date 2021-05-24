@@ -3,7 +3,12 @@ project(mindmapParser)
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(CMAKE_AUTOMOC ON)
 find_package(Qt5Widgets CONFIG REQUIRED)
-set(sources main.cpp
-	MainWindow.cpp)
+set(sources 
+	main.cpp
+	MainWindow.cpp
+	AboutDialog.cpp
+	CentralWidget.cpp
+	Previewer.cpp
+	)
 add_executable(${PROJECT_NAME} ${sources})
 target_link_libraries(${PROJECT_NAME} Qt5::Widgets)

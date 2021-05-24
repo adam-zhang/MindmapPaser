@@ -10,6 +10,14 @@ public:
 	~MainWindow();
 private:
 	void initialize();
+	void addMenus();
+	void addCentralWidget();
+	void makeFileMenu();
+	void makeEditMenu();
+	void makeHelpMenu();
+private slots:
+	void onExit();
+	void onAbout();
 };
 
 #endif//__MAINWINDOW__H
