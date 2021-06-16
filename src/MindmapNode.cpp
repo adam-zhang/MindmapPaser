@@ -7,10 +7,14 @@
 
 #include "MindmapNode.h"
 
-MindmapNode::MindmapNode()
+MindmapNode::MindmapNode(MindmapNode* parent)
 {
+	parent->nodes_.push_back(this);
+	parent_ = parent;
 }
 
 MindmapNode::~MindmapNode()
 {
+	for(auto node : nodes_)
+		delete node;
 }

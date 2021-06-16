@@ -17,8 +17,9 @@ class Previewer : public QWidget, public Viewer
 public:
 	Previewer(QWidget* = nullptr);
 	~Previewer();
-	
 public:
 	void update()override;
+private:
+	void render(const QString& text);
 };
 #endif//__PREVIEWER__H

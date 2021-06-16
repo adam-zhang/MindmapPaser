@@ -7,11 +7,20 @@
 #ifndef __MINDMAPNODE__H
 #define __MINDMAPNODE__H
 
+#include "Properties.h"
+
+#include <QString>
+#include <QVector>
 
 class MindmapNode
 {
 public:
-	MindmapNode();
+	MindmapNode(MindmapNode* parent = nullptr);
 	~MindmapNode();
+public:
+	PROPERTY(QString, text, setText);
+private:
+	QVector<MindmapNode*> nodes_;
+	MindmapNode* parent_ = nullptr;
 };
 #endif//__MINDMAPNODE__H

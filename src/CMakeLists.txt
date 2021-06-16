@@ -18,6 +18,7 @@ set(sources
 	GlobalSettings.cpp
 	Model.cpp
 	Viewer.cpp
+	Render.cpp
 	)
 add_executable(${PROJECT_NAME} ${sources})
 target_link_libraries(${PROJECT_NAME} Qt5::Widgets)
