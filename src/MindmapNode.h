@@ -9,18 +9,20 @@
 
 #include "Properties.h"
 
-#include <QString>
-#include <QVector>
+#include <string>
+#include <vector>
+#include <memory>
 
 class MindmapNode
 {
 public:
-	MindmapNode(MindmapNode* parent = nullptr);
+	MindmapNode(std::shared_ptr<MindmapNode>& parent  );
 	~MindmapNode();
 public:
-	PROPERTY(QString, text, setText);
+	PROPERTY(std::string, text, setText);
 private:
-	QVector<MindmapNode*> nodes_;
-	MindmapNode* parent_ = nullptr;
+	std::vector<std::shared_ptr<MindmapNode>> left_;
+	std::vector<std::shared_ptr<MindmapNode>> right_;
+	std::shared_ptr<MindmapNode> parent_;
 };
 #endif//__MINDMAPNODE__H

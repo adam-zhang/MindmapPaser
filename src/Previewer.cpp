@@ -23,5 +23,5 @@ Previewer::~Previewer()
 void Previewer::update()
 {
 	auto text = Model::instance().text();
-	thread t(&Previewer::render, this, text);
+	//thread t(&Previewer::render, this, text);
 }

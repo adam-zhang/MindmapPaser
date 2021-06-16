@@ -14,3 +14,8 @@ MindmapParser::MindmapParser()
 MindmapParser::~MindmapParser()
 {
 }
+
+std::shared_ptr<MindmapNode> MindmapParser::parse(const std::string& text)
+{
+	
+}
